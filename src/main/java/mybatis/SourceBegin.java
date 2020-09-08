@@ -18,12 +18,20 @@ public class SourceBegin {
         if (inputStream==null){
             System.out.print("null");
         }
+
+        /**
+         * 这里开始一步步打断点
+         */
+        //第一步，工厂初始化
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        //获取sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
+            //获取mapper
             JobMapper jobMapper = sqlSession.getMapper(JobMapper.class);
-            Job job = jobMapper.selectByPrimaryKey(1);
             System.out.print(jobMapper.getClass());
+            //调用mapper，进行增删查改
+            Job job = jobMapper.selectByPrimaryKey(1);
         }catch (Exception e){
             e.printStackTrace();
         }
