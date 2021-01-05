@@ -72,5 +72,6 @@
         <module>active-mq</module>
         <module>rocket-mq</module>
         <module>spring-tx</module>
+        <module>es-demo</module>
     </modules>
 </project>
